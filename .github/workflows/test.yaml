@@ -1,0 +1,36 @@
+name: Tests
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  test:
+    name: Test
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        version: [latest, 0.3.0]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup PAWS CLI
+      uses: ./
+      with:
+        paws-version: ${{ matrix.version }}
+        token: ${{ secrets.PAWS_REPO_TOKEN }}
+
+    - name: Verify installation
+      run: |
+        export PAWS_CS_VERSION=$( paws-compose --version )
+        export PAWS_HT_VERSION=$( paws-humanitec --version )

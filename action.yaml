@@ -1,0 +1,12 @@
+name: 'Setup PAWS environment'
+description: 'Setup PAWS environment and add it to the PATH'
+inputs:
+  paws-version:
+    description: 'The PAWS version to download and use. Supports semver spec and ranges.'
+    required: true
+  token:
+    description: Authorization token for the PAWS CLI tools releases repo. Since there's a default, this is typically not supplied by the user.
+    default: ${{ github.token }}
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
