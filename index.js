@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 
-const setup = require('./lib/setup-paws');
+const setup = require('./lib/setup-score');
 
 (async () => {
   try {

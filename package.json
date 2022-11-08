@@ -1,7 +1,7 @@
 {
-    "name": "setup-paws",
-    "version": "0.1.0",
-    "description": "setup paws action",
+    "name": "setup-score",
+    "version": "1.0",
+    "description": "setup score action",
     "main": "index.js",
     "scripts": {
       "lint": "eslint .",
@@ -11,19 +11,18 @@
     },
     "keywords": [
         "actions",
-        "paws",
+        "score",
         "setup"
     ],
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/humanitec/setup-paws.git"
+      "url": "git+https://github.com/humanitec/setup-score.git"
     },
     "author": "Humanitec",
     "license": "MIT",
-    "homepage": "https://github.com/humanitec/setup-paws",
+    "homepage": "https://github.com/humanitec/setup-score",
     "dependencies": {
       "@actions/core": "^1.8.2",
-      "@actions/github": "^2.2.0",
       "@actions/tool-cache": "^2.0.1"
     },
     "devDependencies": {

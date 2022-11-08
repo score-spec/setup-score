@@ -1,8 +1,8 @@
-# setup-paws
+# setup-score
 
-This action sets up PAWS environment for use in GitHub actions.
+This action sets up Score environment for use in GitHub actions.
 
-It downloads and caches a version of PAWS CLI tools and adds them to PATH.
+It downloads and caches a version of Score CLI tools and adds them to PATH.
 
 # Usage
 
@@ -12,8 +12,9 @@ See [action.yml](action.yml)
 
 ```yaml
 steps:
-  - uses: actions/setup-paws@v1
+  - uses: actions/setup-score@v1
     with:
-      paws-version: '1.0'
-  - run: paws-humanitec version
+      file: score-humanitec
+      version: '0.1'
+  - run: score-humanitec version
 ```
