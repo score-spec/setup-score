@@ -6,7 +6,7 @@ It downloads and caches a version of Score CLI tools and adds them to PATH.
 
 # Usage
 
-See [action.yml](action.yml)
+See [action.yaml](action.yaml)
 
 ## Basic
 
