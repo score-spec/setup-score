@@ -3,7 +3,7 @@ name: Tests
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
 
 defaults:
@@ -18,19 +18,32 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        version: [latest, 0.3.0]
+        version: [latest, 0.6.0]
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Setup PAWS CLI
+    - name: Setup score-compose
       uses: ./
       with:
-        paws-version: ${{ matrix.version }}
-        token: ${{ secrets.PAWS_REPO_TOKEN }}
+        file: score-compose
+        version: ${{ matrix.version }}
+
+    - name: Setup score-humanitec
+      uses: ./
+      with:
+        file: score-humanitec
+        version: ${{ matrix.version }}
+
+    - name: Setup score-helm
+      uses: ./
+      with:
+        file: score-helm
+        version: ${{ matrix.version }}
 
     - name: Verify installation
       run: |
-        export PAWS_CS_VERSION=$( paws-compose --version )
-        export PAWS_HT_VERSION=$( paws-humanitec --version )
+        export SCORE_CS_VERSION=$( score-compose --version )
+        export SCORE_HT_VERSION=$( score-humanitec --version )
+        export SCORE_HM_VERSION=$( score-helm --version )
