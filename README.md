@@ -15,6 +15,6 @@ steps:
   - uses: score-spec/setup-score@v2
     with:
       file: score-humanitec
-      version: '0.6.0'
+      version: latest
   - run: score-humanitec --version
 ```

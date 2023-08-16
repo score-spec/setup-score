@@ -5,7 +5,7 @@ inputs:
     description: 'The Score CLI tool to install: score-compose, score-humanitec, or score-helm.'
     required: true
   version:
-    description: 'The Score version to download and use. Supports semver spec and ranges.'
+    description: 'The Score version to download and use. Use "latest" to update automatically.'
     required: true
 runs:
   using: 'node16'
