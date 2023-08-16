@@ -8,7 +8,7 @@ inputs:
     description: 'The Score version to download and use. Use the `latest` to fetch the most recent stable release version automatically.'
     required: true
   token:
-    description: 'An authentication token (usually a GITHUB_TOKEN) authorised to fetch data from the `GitHub.com`. Only reuired if `version` is set to `latest`'
+    description: 'An authentication token (usually a GITHUB_TOKEN) authorised to fetch data from the `GitHub.com`. Only required if `version` is set to `latest`'
     required: false
 runs:
   using: 'node16'
