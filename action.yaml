@@ -5,8 +5,11 @@ inputs:
     description: 'The Score CLI tool to install: score-compose, score-humanitec, or score-helm.'
     required: true
   version:
-    description: 'The Score version to download and use. Supports semver spec and ranges.'
+    description: 'The Score version to download and use. Use the `latest` to fetch the most recent stable release version automatically.'
     required: true
+  token:
+    description: 'An authentication token (usually a GITHUB_TOKEN) authorised to fetch data from the `GitHub.com`. Only required if `version` is set to `latest`'
+    required: false
 runs:
   using: 'node16'
   main: 'dist/index.js'
