@@ -12,9 +12,9 @@ See [action.yaml](action.yaml)
 
 ```yaml
 steps:
-  - uses: actions/setup-score@v2
+  - uses: score-spec/setup-score@v2
     with:
       file: score-humanitec
-      version: '0.1.0'
+      version: '0.6.0'
   - run: score-humanitec --version
 ```
