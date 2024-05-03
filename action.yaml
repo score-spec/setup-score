@@ -11,5 +11,5 @@ inputs:
     description: 'An authentication token (usually a GITHUB_TOKEN) authorised to fetch data from the `GitHub.com`. Only required if `version` is set to `latest`'
     required: false
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
