@@ -22,7 +22,7 @@
     "license": "MIT",
     "homepage": "https://github.com/humanitec/setup-score",
     "dependencies": {
-      "@actions/core": "^1.10.0",
+      "@actions/core": "^1.11.1",
       "@actions/github": "^5.1.1",
       "@actions/tool-cache": "^2.0.1",
       "@octokit/auth-action": "^4.0.0"
