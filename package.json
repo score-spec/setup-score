@@ -23,7 +23,7 @@
     "homepage": "https://github.com/humanitec/setup-score",
     "dependencies": {
       "@actions/core": "^1.11.1",
-      "@actions/github": "^5.1.1",
+      "@actions/github": "^6.0.0",
       "@actions/tool-cache": "^2.0.1",
       "@octokit/auth-action": "^5.1.1"
     },
