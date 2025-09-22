@@ -28,7 +28,7 @@
       "@octokit/auth-action": "^6.0.1"
     },
     "devDependencies": {
-      "@vercel/ncc": "^0.38.3",
+      "@vercel/ncc": "^0.38.4",
       "eslint": "^9.35.0",
       "jest": "^30.1.3"
     }
