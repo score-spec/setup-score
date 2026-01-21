@@ -24,7 +24,7 @@
     "dependencies": {
       "@actions/core": "^2.0.1",
       "@actions/github": "^7.0.0",
-      "@actions/tool-cache": "^2.0.2",
+      "@actions/tool-cache": "^3.0.0",
       "@octokit/auth-action": "^6.0.2"
     },
     "devDependencies": {
