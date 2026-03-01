@@ -6,10 +6,12 @@ on:
     - main
   pull_request:
 
+permissions:
+  contents: read
+
 defaults:
   run:
     shell: bash
-
 jobs:
   test:
     name: Test
@@ -18,11 +20,11 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        version: [0.6.0, latest]
+        version: [latest]
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v6
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
     - name: Setup score-compose
       uses: ./
@@ -31,22 +33,14 @@ jobs:
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup score-humanitec
+    - name: Setup score-k8s
       uses: ./
       with:
-        file: score-humanitec
-        version: ${{ matrix.version }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Setup score-helm
-      uses: ./
-      with:
-        file: score-helm
+        file: score-k8s
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Verify installation
       run: |
         export SCORE_CS_VERSION=$( score-compose --version )
-        export SCORE_HT_VERSION=$( score-humanitec --version )
-        export SCORE_HM_VERSION=$( score-helm --version )
+        export SCORE_KS_VERSION=$( score-k8s --version )
