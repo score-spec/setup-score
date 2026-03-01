@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        version: [0.6.0, latest]
+        version: [latest]
 
     steps:
     - name: Checkout
