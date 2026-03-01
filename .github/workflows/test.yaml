@@ -40,15 +40,7 @@ jobs:
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup score-radius
-      uses: ./
-      with:
-        file: score-radius
-        version: ${{ matrix.version }}
-        token: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Verify installation
       run: |
         export SCORE_CS_VERSION=$( score-compose --version )
         export SCORE_KS_VERSION=$( score-k8s --version )
-        export SCORE_RS_VERSION=$( score-radius --version )
