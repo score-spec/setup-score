@@ -6,10 +6,12 @@ on:
     - main
   pull_request:
 
+permissions:
+  contents: read
+
 defaults:
   run:
     shell: bash
-
 jobs:
   test:
     name: Test
@@ -31,22 +33,22 @@ jobs:
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup score-humanitec
+    - name: Setup score-k8s
       uses: ./
       with:
-        file: score-humanitec
+        file: score-k8s
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Setup score-helm
+    - name: Setup score-radius
       uses: ./
       with:
-        file: score-helm
+        file: score-radius
         version: ${{ matrix.version }}
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Verify installation
       run: |
         export SCORE_CS_VERSION=$( score-compose --version )
-        export SCORE_HT_VERSION=$( score-humanitec --version )
-        export SCORE_HM_VERSION=$( score-helm --version )
+        export SCORE_KS_VERSION=$( score-k8s --version )
+        export SCORE_RS_VERSION=$( score-radius --version )
