@@ -25,11 +25,11 @@
       "@actions/core": "^3.0.1",
       "@actions/github": "^9.1.1",
       "@actions/tool-cache": "^4.0.0",
-      "@octokit/auth-action": "^6.0.2"
+      "@octokit/auth-action": "^6.0.3"
     },
     "devDependencies": {
       "@vercel/ncc": "^0.45.0",
       "eslint": "^10.9.1",
-      "jest": "^30.4.2"
+      "jest": "^30.5.1"
     }
   }
